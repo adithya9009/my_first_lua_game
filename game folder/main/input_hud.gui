@@ -1,0 +1,27 @@
+script: "/main/input_hud.gui_script"
+fonts {
+  name: "FONT"
+  font: "/main/FONT.font"
+}
+nodes {
+  position {
+    x: 480.0
+    y: 40.0
+  }
+  scale {
+    x: 1.335996
+    y: 1.538326
+    z: 0.873792
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "[ W ] [ A ] [ S ]  [ D ]"
+  font: "FONT"
+  id: "input_text"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

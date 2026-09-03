@@ -1,0 +1,18 @@
+name: "main"
+instances {
+  id: "player"
+  prototype: "/main/player.go"
+  position {
+    x: 480.0
+    y: 320.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"input_hud\"\n"
+  "  component: \"/main/input_hud.gui\"\n"
+  "}\n"
+  ""
+}

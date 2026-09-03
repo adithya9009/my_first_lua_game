@@ -1,0 +1,30 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.node = gui.get_node("input_text")
+	self.keys = { w = false, a = false, s = false, d = false }
+end
+
+local function update_display(self)
+	local w_str = self.keys.w and "[W]" or " W "
+	local a_str = self.keys.a and "[A]" or " A "
+	local s_str = self.keys.s and "[S]" or " S "
+	local d_str = self.keys.d and "[D]" or " D "
+
+	gui.set_text(self.node, string.format("%s  %s  %s  %s", w_str, a_str, s_str, d_str))
+end
+
+function on_input(self, action_id, action)
+	local is_pressed = not action.released
+
+	if action_id == hash("up") then
+		self.keys.w = is_pressed
+	elseif action_id == hash("left") then
+		self.keys.a = is_pressed
+	elseif action_id == hash("down") then
+		self.keys.s = is_pressed
+	elseif action_id == hash("right") then
+		self.keys.d = is_pressed
+	end
+
+	update_display(self)
+end
